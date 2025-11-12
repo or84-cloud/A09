@@ -2,6 +2,17 @@
 :root {
 	--accent-color: #800000;  /* could also be coded #800 */
 	--gradient-color: #f6bb73;
+    --mid-color: antiquewhite;
+    --light-color: ;
+    --dark-color:  var(--accent-color);
+}
+
+:hover{
+
+}
+
+:focus{
+
 }
 
 /* reset */
@@ -125,4 +136,33 @@ footer {
 }
 .large {
 	font-size: 125%;
+}
+
+.menu{
+    display: flex;
+
+    &li{
+        flex-basis: 20%;
+        text-align: center;
+        list-style-type: none;
+        color: var(--light-color);
+
+
+
+        }
+}
+.navbar {
+    background-color: var(--accent-color);
+
+    & a {
+        padding: 1em 1em 1em 1em;
+        margin: 0 1px 2px 1px;
+        color: var(--mid-color);
+        text-decoration: none;
+
+        & ul {
+            padding: 0;
+            margin: 0;
+        }
+    }
 }
