@@ -158,14 +158,6 @@ footer {
     }
 
 
-& li:first-child a{
-    margin-left: 0;
-}
-
-& li:last-child a{
-    margin-right: 0;
-}
-
 .navbar{
     background-color: var(--accent-color);
 
