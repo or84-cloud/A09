@@ -3,12 +3,12 @@
 	--accent-color: #800000;  /* could also be coded #800 */
 	--gradient-color: #f6bb73;
     --mid-color: antiquewhite;
-    --light-color: ;
-    --dark-color:  var(--accent-color);
+    --light-color: #f6bb73 ;
+    --dark-color:  black;
 }
 
 :hover{
-
+    --light-color:  var(--mid-color);
 }
 
 :focus{
@@ -85,7 +85,7 @@ main {
 	}
 	& h3 + img { /* speaker images */
 		width: clamp(40px, 50%, 75px);
-		border: 4px double var(--accent-color);
+		border: 2px double var(--accent-color);
 		border-radius: 10px;
 	}
 }
@@ -140,29 +140,66 @@ footer {
 
 .menu{
     display: flex;
+    flex-wrap: wrap;
 
-    &li{
+    & li{
         flex-basis: 20%;
         text-align: center;
-        list-style-type: none;
-        color: var(--light-color);
 
+        &:has(.submenu){
+            position: relative;
 
-
+            & small}
+            margin-left: 0.3em
         }
+        &:hover .submenu {
+            display: block;
+        }
+    }
+
+
+& li:first-child a{
+    margin-left: 0;
 }
-.navbar {
+
+& li:last-child a{
+    margin-right: 0;
+}
+
+.navbar{
     background-color: var(--accent-color);
 
-    & a {
-        padding: 1em 1em 1em 1em;
-        margin: 0 1px 2px 1px;
-        color: var(--mid-color);
+    &ul{
+        padding: 0;
+        list-style: none;
+        color: var(--light-color);
+        margin: 0;
+    }
+    & a{
+        display: block;
+        padding: 1em;
         text-decoration: none;
+        color: var(--light-color);
+        margin: 0 1px 2px;
+    }
+    & a:hover, & a:focus, & a:current{
+        background-color: var(--mid-color);
+        color: var(--dark-color);
+        font-style: normal;
+    }
 
-        & ul {
-            padding: 0;
-            margin: 0;
-        }
+}
+
+.submenu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    display: none;
+    z-index: 100;
+
+    & li a{
+        margin: 0 2px 2px;
     }
 }
